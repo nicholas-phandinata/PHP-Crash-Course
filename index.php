@@ -1,4 +1,4 @@
-<?php include "util.php" ?>
+<?php session_start(); include "util.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +13,7 @@
       <?php include "header.html" ?>
       <h3>Hello from html</h3>
       <?php
+            // session_destroy();
             $myVariable = "Text from my variable";
             $countMyVariable = strlen($myVariable);
             $replaceVar = str_replace("my", "our", $myVariable);
@@ -55,7 +56,10 @@
             include "header.php"; 
 
             utilFunc("Indonesia");
-            echo $constantVar;
+            echo "$constantVar <br>";
+
+            // $test = $_SESSION['book1'];
+            // print_r($test);
       ?>
 
       <?php include "footer.html" ?>

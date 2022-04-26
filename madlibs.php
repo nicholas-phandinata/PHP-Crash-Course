@@ -182,23 +182,25 @@
 
       <br>
       <hr>
-      <!-- Class -->
+      <!-- Class & Constructor-->
       <?php
-            $book1 = new Book; //object
-            $book1->title = "Harry Potter";
-            $book1->author = "JK Rowling";
-            $book1->pages = 400;
+            $book1 = new Book("Harry Potter", "JK Rowling", 400); //object
+            // $book1->title = "Harry Potter";
+            // $book1->author = "JK Rowling";
+            // $book1->pages = 400;
 
-            $book2 = new Book; //object
-            $book2->title = "Hunger Games";
-            $book2->author = "Collins";
-            $book2->pages = 450;
+            $book2 = new Book("Hunger Games", "Collins", 450); //object
+            // $book2->title = "Hunger Games";
+            // $book2->author = "Collins";
+            // $book2->pages = 450;
 
-            $book3 = new Book; //object
-            $book3->title = "Maze Runner";
-            $book3->author = "Steve";
-            $book3->pages = 500;
+            $book3 = new Book("Maze Runner", "Steve", 500); //object
+            // $book3->title = "Maze Runner";
+            // $book3->author = "Steve";
+            // $book3->pages = 500;
 
+            // $_SESSION['book1'] = $book1->title;
+            // $_SESSION['book1'] = $book1;
             // echo $book1->title;
 
             $bookSubject = array("title", "author", "pages");
