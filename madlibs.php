@@ -182,19 +182,19 @@
 
       <br>
       <hr>
-      <!-- Class & Constructor-->
+      <!-- Class, Constructor, Object function, Getter & Setter-->
       <?php
-            $book1 = new Book("Harry Potter", "JK Rowling", 400); //object
+            $book1 = new Book("Harry Potter", "JK Rowling", 400, "G"); //object
             // $book1->title = "Harry Potter";
             // $book1->author = "JK Rowling";
             // $book1->pages = 400;
 
-            $book2 = new Book("Hunger Games", "Collins", 450); //object
+            $book2 = new Book("Hunger Games", "Collins", 650, "T"); //object
             // $book2->title = "Hunger Games";
             // $book2->author = "Collins";
             // $book2->pages = 450;
 
-            $book3 = new Book("Maze Runner", "Steve", 500); //object
+            $book3 = new Book("Maze Runner", "Steve", 500, "TER"); //object
             // $book3->title = "Maze Runner";
             // $book3->author = "Steve";
             // $book3->pages = 500;
@@ -203,17 +203,25 @@
             // $_SESSION['book1'] = $book1;
             // echo $book1->title;
 
-            $bookSubject = array("title", "author", "pages");
+            $bookSubject = array("title", "author", "pages", "rating");
             
             for ($i = 1; $i <= 3; $i++) {
                   $whichBook = 'book'.$i;
                   echo "$whichBook: ";
+                  if ($$whichBook->isLongBook()){
+                        echo "Is a Long Book, ";
+                  } else {
+                        echo "Is a Short Book, ";
+                  }
                   for ($x = 0; $x < count($bookSubject); $x++) {
-                        $subject = $bookSubject[$x];
-                        $bookInfo = $$whichBook->$subject;
                         if ($x < count($bookSubject)-1) {
+                              $subject = $bookSubject[$x];
+                              $bookInfo = $$whichBook->$subject;
                               echo "$bookInfo, ";
                         } else {
+                              $bookInfo = $$whichBook->getRating();
+                              echo "$bookInfo, ";
+                              $bookInfo = $$whichBook->setRating("R");
                               echo "$bookInfo <br>";
                         }
                   }

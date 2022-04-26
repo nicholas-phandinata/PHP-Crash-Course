@@ -6,16 +6,48 @@
       }
 
       class Book {
-            var $title;
-            var $author;
-            var $pages;
+            /**
+            * @SuppressWarnings(PHPMD.ElseExpression)
+            */
+            // var $title;
+            // var $author;
+            // var $pages;
+            // var $rating;
 
-            function __construct($aTitle, $aAuthor, $aPages)
+            //visibility modifier
+            public $title;
+            public $author;
+            public $pages;
+            private $rating;
+
+            function __construct($aTitle, $aAuthor, $aPages, $aRating)
             {
                   $this->title = $aTitle;
                   $this->author = $aAuthor;
                   $this->pages = $aPages;
+                  // $this->rating = $aRating;
+                  $this->setRating($aRating);
                   // echo "Created new book <br>";
+            }
+
+            function isLongBook() {
+                  if ($this->pages > 450) {
+                        return true;
+                  }
+                  return false;
+            }
+
+            function getRating() {
+                  return $this->rating;
+            }
+
+
+            function setRating($setRating) {
+                  if ($setRating == "NR" || $setRating == "R" || $setRating == "T" || $setRating == "G"){
+                        return $this->rating = $setRating;
+                  }
+                  return $this->rating = "Invalid Rating";
+                  // $this->rating = $setRating;
             }
       }
 ?>
