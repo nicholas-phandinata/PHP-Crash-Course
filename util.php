@@ -50,4 +50,29 @@
                   // $this->rating = $setRating;
             }
       }
+
+      class Chef {
+            function makeChicken() {
+                  echo "The chef makes chicken <br>";
+            }
+
+            function makeSalad() {
+                  echo "The chef makes salad <br>";
+            }
+
+            function makeBurger() {
+                  echo "The chef makes burger <br>";
+            }
+      }
+
+      class ProChef extends Chef{
+            function makeSpecialDish() {
+                  echo "Special dish <br>";
+            }
+
+            function makeBurger()
+            {
+                  echo "Burger";
+            }
+      }
 ?>

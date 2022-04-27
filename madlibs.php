@@ -227,5 +227,15 @@
                   }
             }
       ?>
+
+      <br><hr>
+      <!-- Class Inheritance and Override-->
+      <?php
+            $chef = new ProChef();
+            $chef = new Chef();
+            $chef->makeChicken();
+            // $chef->makeSpecialDish();
+            $chef->makeBurger();
+      ?>
 </body>
 </html>
